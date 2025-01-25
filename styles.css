@@ -36,4 +36,10 @@
 
 body {
   min-height: 100svh;
+  background-origin: var(--clr-white);
+  font-family: "Red Hat Display", sans-serif;
+}
+
+button {
+  display: block;
 }
