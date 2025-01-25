@@ -1,0 +1,39 @@
+:root {
+  --clr-cyan-300: #8FE3F9;
+  --clr-cyan-600: #4D96A9;
+  --clr-purple-300: #D9B8FF;
+  --clr-purple-600: #855FB1;
+  --clr-slate-300: #D1D1DF;
+  --clr-slate-600: #87879D;
+  --clr-slate-900: #28283D;
+  --clr-white: #FAFAFA;
+
+  --text-1: 4rem;
+  --text-2: 2.5rem;
+  --text-3: 1rem;
+  --text-3-spacing: 4px;
+  --text-4: 1.125rem;
+  --text-5: 1rem;
+
+  --spacing-50: 4px;
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-700: 56px;
+  --spacing-800: 64px;
+  --spacing-900: 72px;
+  --spacing-1000: 80px;
+  --spacing-1400: 112px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
+}
+
+body {
+  min-height: 100svh;
+}
