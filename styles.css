@@ -50,8 +50,6 @@ body {
   background-origin: var(--clr-white);
   font-family: "Red Hat Display", sans-serif;
   text-align: center;
-  
-  justify-items: center;
 }
 
 button {
@@ -106,13 +104,29 @@ img {
 }
 
 footer {
+  --bg-url: url('./assets/mobile/image-footer.jpg');
   background: 
     var(--hero-gradient),
-    url('./assets/mobile/image-footer.jpg') 0 0 / cover no-repeat;
+    var(--bg-url) 0 0 / cover no-repeat;
   padding: var(--spacing-800) var(--spacing-400);
   color: var(--clr-white);
 
   display: flex;
   flex-direction: column;
   gap: var(--spacing-300);
+}
+
+
+@media (min-width: 48em) {
+
+  footer {
+    --bg-url: url('./assets/tablet/image-footer.jpg');
+  }
+}
+
+@media (min-width: 90em) {
+
+  footer {
+    --bg-url: url('./assets/desktop/image-footer.jpg');
+  }
 }
