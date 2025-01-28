@@ -57,6 +57,29 @@ body {
 button {
   display: block;
   margin: 0 auto;
+  font-family: inherit;
+  padding: var(--spacing-200) var(--spacing-500);
+  font-weight: 900;
+  border-radius: 1.8125rem;
+  border: 0;
+  line-height: 1.5;
+  color: var(--clr-white);
+}
+
+.btn-purple {
+  background-color: var(--clr-purple-600);
+}
+
+.btn-purple span {
+  color: var(--clr-purple-300);
+}
+
+.btn-green {
+  background-color: var(--clr-cyan-600);
+}
+
+.btn-green span {
+  color: var(--clr-cyan-300);
 }
 
 img {
