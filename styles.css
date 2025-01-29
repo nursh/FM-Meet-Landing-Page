@@ -54,7 +54,7 @@ body {
 
 button {
   display: block;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   font-family: inherit;
   padding: var(--spacing-200) var(--spacing-500);
   font-weight: 900;
@@ -83,6 +83,29 @@ button {
 img {
   display: block;
   width: 100%;
+}
+
+.round-sec {
+  width: var(--spacing-700);
+  height: var(--spacing-700);
+  border-radius: 50%;
+  border: 1px solid var(--clr-slate-300);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative
+}
+
+.round-sec::before {
+  content: "";
+  width: 0.0625rem;
+  height: var(--spacing-1000);
+  background-color: var(--clr-slate-300);
+  
+  position: absolute;
+  top: calc(-1 * var(--spacing-1000));
 }
 
 .content-grid {
@@ -128,5 +151,11 @@ footer {
 
   footer {
     --bg-url: url('./assets/desktop/image-footer.jpg');
+    padding: var(--spacing-1400) var(--spacing-1000);
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0;
   }
 }
