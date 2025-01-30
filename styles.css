@@ -85,11 +85,17 @@ img {
   width: 100%;
 }
 
+.left-hero,
+.right-hero {
+  display: none;
+}
+
 .round-sec {
   width: var(--spacing-700);
   height: var(--spacing-700);
   border-radius: 50%;
   border: 1px solid var(--clr-slate-300);
+  justify-self: center;
 
   display: flex;
   justify-content: center;
@@ -157,5 +163,25 @@ footer {
     align-items: center;
     justify-content: space-evenly;
     gap: 0;
+  }
+
+  .tablet-hero {
+    display: none;
+  }
+
+  .left-hero,
+  .right-hero {
+    display: inline-block;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
