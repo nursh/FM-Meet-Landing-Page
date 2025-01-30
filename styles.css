@@ -90,6 +90,10 @@ img {
   display: none;
 }
 
+.meet-logo {
+  justify-self: center;
+}
+
 .round-sec {
   width: var(--spacing-700);
   height: var(--spacing-700);
@@ -112,6 +116,13 @@ img {
   
   position: absolute;
   top: calc(-1 * var(--spacing-1000));
+}
+
+.hero-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-200);
 }
 
 .content-grid {
@@ -151,6 +162,16 @@ footer {
   footer {
     --bg-url: url('./assets/tablet/image-footer.jpg');
   }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-btns {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 90em) {
@@ -181,18 +202,11 @@ footer {
     gap: var(--spacing-400);
   }
 
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
 
   .hero-text > *+* {
     margin-top: var(--spacing-400);
   }
 
-  .hero-btns {
-    display: flex;
-    gap: var(--spacing-200);
-  }
+
 }
