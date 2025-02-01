@@ -82,7 +82,8 @@ button {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .left-hero,
@@ -92,6 +93,15 @@ img {
 
 .meet-logo {
   justify-self: center;
+  width: 7.375rem;
+  height: 1.75rem;
+  padding: 3rem var(--spacing-1000) 0;
+}
+
+.tablet-hero {
+  padding-top: var(--spacing-800);
+  padding-bottom: 3rem;
+  max-height: 25rem;
 }
 
 .round-sec {
