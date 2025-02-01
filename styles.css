@@ -29,7 +29,8 @@
 
   --hero-bg: rgb(77 150 168 / 0.9);
   --hero-gradient: linear-gradient(var(--hero-bg), var(--hero-bg));
-  --overlap-offset-top: calc(-1 * (var(--spacing-1000) + (var(--spacing-700) / 2))); 
+  --offset-top: calc(var(--spacing-1000) + (var(--spacing-700) / 2));
+  --overlap-offset-top: calc(-1 * var(--offset-top)); 
 }
 
 *,
@@ -214,6 +215,10 @@ h3 {
 
 main h2 {
   color: var(--clr-slate-900);
+}
+
+main {
+  margin-bottom: calc(var(--offset-top) + var(--spacing-800));
 }
 
 
