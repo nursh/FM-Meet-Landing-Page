@@ -182,7 +182,7 @@ footer {
 }
 
 h1 {
-  font-size: var(--text-2);
+  font-size: clamp(var(--text-2), 1.6rem + 2.25vw, var(--text-1));
   color: var(--clr-slate-900);
   font-weight: 900;
 }
@@ -265,9 +265,8 @@ main {
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-400);
+    padding: var(--spacing-800) var(--spacing-1000);
   }
-
-
 
   .hero-text > *+* {
     margin-top: var(--spacing-400);
