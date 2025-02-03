@@ -221,6 +221,17 @@ main {
   margin-bottom: calc(var(--offset-top) + var(--spacing-800));
 }
 
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-gap: var(--spacing-200);
+  margin-bottom: var(--spacing-800);
+}
+
+.image-gallery > img {
+  border-radius: 0.5em;
+}
+
 
 @media (min-width: 48em) {
 
