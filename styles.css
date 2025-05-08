@@ -11,21 +11,21 @@
   --text-1: 4rem;
   --text-2: 2.5rem;
   --text-3: 1rem;
-  --text-3-spacing: 4px;
+  --text-3-spacing: 0.25rem;
   --text-4: 1.125rem;
   --text-5: 1rem;
 
-  --spacing-50: 4px;
-  --spacing-100: 8px;
-  --spacing-200: 16px;
-  --spacing-300: 24px;
-  --spacing-400: 32px;
-  --spacing-500: 40px;
-  --spacing-700: 56px;
-  --spacing-800: 64px;
-  --spacing-900: 72px;
-  --spacing-1000: 80px;
-  --spacing-1400: 112px;
+  --spacing-50: 0.25rem;
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-700: 3.5rem;
+  --spacing-800: 4rem;
+  --spacing-900: 4.5rem;
+  --spacing-1000: 5rem;
+  --spacing-1400: 7rem;
 
   --hero-bg: rgb(77 150 168 / 0.9);
   --hero-gradient: linear-gradient(var(--hero-bg), var(--hero-bg));
@@ -36,7 +36,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 h1,
@@ -55,8 +55,6 @@ body {
 }
 
 button {
-  display: block;
-  /* margin: 0 auto; */
   font-family: inherit;
   padding: var(--spacing-200) var(--spacing-500);
   font-weight: 900;
@@ -64,10 +62,11 @@ button {
   border: 0;
   line-height: 1.5;
   color: var(--clr-white);
+  background-color: var(--bg-color);
 }
 
-.btn-purple {
-  background-color: var(--clr-purple-600);
+button.btn-purple {
+  --bg-color: var(--clr-purple-600);
 }
 
 .btn-purple span {
@@ -75,7 +74,7 @@ button {
 }
 
 .btn-green {
-  background-color: var(--clr-cyan-600);
+  --bg-color: var(--clr-cyan-600);
 }
 
 .btn-green span {
@@ -87,16 +86,19 @@ img {
   width: 100%;
 }
 
+nav {
+  background-color: var(--clr-cyan-300);
+  padding-top: clamp(3rem, 4.5vw, var(--spacing-1000));
+}
+
+.nav-logo img {
+  margin-inline: auto;
+  width: auto;
+}
+
 .left-hero,
 .right-hero {
   display: none;
-}
-
-.meet-logo {
-  justify-self: center;
-  width: 7.375rem;
-  height: 1.75rem;
-  padding: 3rem var(--spacing-1000) 0;
 }
 
 .tablet-hero {
@@ -140,19 +142,19 @@ img {
 .content-grid {
   display: grid;
   grid-template-columns:
-    [full-w-start] 1fr
-    [content-f-start] repeat(2, var(--spacing-800))
-    repeat(2, var(--spacing-800)) [content-f-end]
-    1fr [full-w-end];
+    [full-start] 1fr
+    [content-start] repeat(2, var(--spacing-800))
+    repeat(2, var(--spacing-800)) [content-end]
+    1fr [full-end];
   gap: var(--spacing-200);
 }
 
 .content-grid > * {
-  grid-column: content-f;
+  grid-column: content;
 }
 
 .content-grid > .full-w {
-  grid-column: full-w;
+  grid-column: full;
 }
 
 footer {
@@ -162,12 +164,13 @@ footer {
     var(--bg-url) 0 0 / cover no-repeat;
   padding: var(--spacing-800) var(--spacing-400);
   color: var(--clr-white);
+  position: relative;
+}
 
+.footer-content {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-300);
-
-  position: relative;
 }
 
 .round-sec.overlap {
@@ -183,7 +186,7 @@ h1 {
   font-weight: 900;
 }
 
-p:not(footer > p) {
+p:not(.footer-content > p) {
   color: var(--clr-slate-600);
   font-weight: 500;
 }
@@ -220,19 +223,35 @@ main {
 }
 
 .image-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  grid-gap: var(--spacing-200);
   margin-top: var(--spacing-800);
   margin-bottom: var(--spacing-800);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-200);
 }
 
 .image-gallery > img {
   border-radius: 0.5em;
+  width: calc(50% - var(--spacing-200) / 2);
 }
 
 
 @media (min-width: 48em) {
+
+  .content-grid {
+    grid-template-columns:
+      [full-start] 1fr
+      [col-start] repeat(8, var(--spacing-800)) [col-end]
+      1fr [full-end];
+  }
+
+  .content-grid > *+* {
+    grid-column: col;
+  }
+
+  .content-grid > .full-w {
+    grid-column: full;
+  }
 
   footer {
     --bg-url: url('./assets/tablet/image-footer.jpg');
@@ -254,7 +273,9 @@ main {
   footer {
     --bg-url: url('./assets/desktop/image-footer.jpg');
     padding: var(--spacing-1400) var(--spacing-1000);
-
+  }
+  
+  .footer-content {    
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;

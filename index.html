@@ -21,10 +21,13 @@
     <title>Frontend Mentor | Meet landing page</title>
   </head>
 
-  <body class="content-grid">
-    <img src="./assets/logo.svg" alt="Meet logo" class="meet-logo">
-    <img src="./assets/tablet/image-hero.png" alt="Hero people images" class="full-w tablet-hero">
-    <header class="full-w hero">
+  <body>
+    <nav class="nav-logo">
+      <img src="./assets/logo.svg" alt="Meet logo">
+    </nav>
+
+    <header class="content-grid hero">
+      <img src="./assets/tablet/image-hero.png" alt="Hero people images" class="full-w tablet-hero">
       <img src="./assets/desktop/image-hero-left.png" alt="Left Hero" class="left-hero" />
       <div class="hero-text">
         <h1>Group Chat for Everyone</h1>
@@ -40,7 +43,7 @@
       <img src="./assets/desktop/image-hero-right.png" alt="Right Hero" class="right-hero" />
     </header>
 
-    <main>
+    <main class="content-grid">
       <div class="round-sec">
         <div class="round-sec-line"></div>
         <span class="round-sec-text">01</span>
@@ -54,7 +57,6 @@
       </div>
 
       <h3>Built for modern use</h3>
-
       <h2>Smarter meetings, all in one place</h2>
       <p>
         Send messages, share files, show your screen, and record your meetings —
@@ -65,18 +67,19 @@
 
 
     
-    <footer class="full-w">
+    <footer class="content-grid">
       <div class="round-sec overlap">
         <div class="round-sec-line"></div>
         <span class="round-sec-text">02</span>
       </div>
-      <h2>Experience more together</h2>
-      <p>
-        Stay connected with reliable HD meetings and unlimited one-on-one and
-        group video sessions.
-      </p>
-      <button class="btn-purple">Download <span>v1.3</span></button>
+      <div class="footer-content full-w">
+        <h2>Experience more together</h2>
+        <p>
+          Stay connected with reliable HD meetings and unlimited one-on-one and
+          group video sessions.
+        </p>
+        <button class="btn-purple">Download <span>v1.3</span></button>
+      </div>
     </footer>
-
   </body>
 </html>
