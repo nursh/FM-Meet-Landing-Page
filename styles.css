@@ -29,8 +29,8 @@
 
   --hero-bg: rgb(77 150 168 / 0.9);
   --hero-gradient: linear-gradient(var(--hero-bg), var(--hero-bg));
-  --offset-top: calc(var(--spacing-1000) + (var(--spacing-700) / 2));
-  --overlap-offset-top: calc(-1 * var(--offset-top)); 
+  --footer-offset-top: calc(var(--spacing-1000) + (var(--spacing-700) / 2));
+  --overlap-offset-top: calc(-1 * var(--footer-offset-top)); 
 }
 
 *,
@@ -145,6 +145,13 @@ nav {
   margin-inline: auto;
 }
 
+.hero-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-200);
+}
+
 .left-hero,
 .right-hero {
   display: none;
@@ -153,6 +160,7 @@ nav {
 .tablet-hero {
   padding-bottom: 3rem;
 }
+
 
 .round-sec {
   display: flex;
@@ -180,12 +188,14 @@ nav {
   background-color: var(--clr-slate-300);
 }
 
-.hero-btns {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-200);
+.round-sec.overlap {
+  position: absolute;
+  content: "";
+  top: var(--overlap-offset-top);
+  left: calc(50% - var(--spacing-400));
 }
+
+/** Footer */
 
 footer {
   --bg-url: url('./assets/mobile/image-footer.jpg');
@@ -203,11 +213,8 @@ footer {
   gap: var(--spacing-300);
 }
 
-.round-sec.overlap {
-  position: absolute;
-  content: "";
-  top: var(--overlap-offset-top);
-  left: calc(50% - var(--spacing-400));
+.footer-content button {
+  align-self: center;
 }
 
 p:not(.footer-content > p) {
@@ -215,11 +222,12 @@ p:not(.footer-content > p) {
   font-weight: 500;
 }
 
-
-
+/**
+  Main Section
+*/
 
 main {
-  margin-block: var(--spacing-400) var(--spacing-800);
+  margin-block: var(--spacing-400) calc(var(--spacing-800) + var(--footer-offset-top));
   margin-inline: var(--spacing-400);
   padding-block-start: var(--spacing-400);
 }
