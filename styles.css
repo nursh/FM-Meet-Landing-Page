@@ -54,6 +54,19 @@ body {
   text-align: center;
 }
 
+h2 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: var(--clr-cyan-600);
+}
+
 button {
   font-family: inherit;
   padding: var(--spacing-200) var(--spacing-500);
@@ -197,8 +210,6 @@ footer {
   left: calc(50% - var(--spacing-400));
 }
 
-
-
 p:not(.footer-content > p) {
   color: var(--clr-slate-600);
   font-weight: 500;
@@ -206,24 +217,6 @@ p:not(.footer-content > p) {
 
 
 
-h2 {
-  font-size: 2rem;
-  font-weight: 900;
-}
-
-h3 {
-  font-size: 0.75rem;
-  font-weight: 900;
-  letter-spacing: 0.25rem;
-  text-transform: uppercase;
-  color: var(--clr-cyan-600);
-}
-
-main h2 {
-  color: var(--clr-slate-900);
-  margin-top: var(--spacing-200);
-  margin-bottom: var(--spacing-400);
-}
 
 main {
   margin-block: var(--spacing-400) var(--spacing-800);
@@ -231,6 +224,21 @@ main {
   padding-block-start: var(--spacing-400);
 }
 
+main > *+* {
+  margin-block-start:  var(--spacing-800);
+}
+
+.main-content > *+* {
+  margin-block-start: var(--margin-block-start, var(--spacing-200));
+}
+
+.main-content h2 {
+  color: var(--clr-slate-900);
+}
+
+.main-content p {
+  --margin-block-start: var(--spacing-400);
+}
 
 /* Image Gallery */
 
